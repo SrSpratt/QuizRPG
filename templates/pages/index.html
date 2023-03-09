@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Bem-vindo ao Quiz-RPG</h1>
+        <p>Este é o nosso aplicativo de quizzes interativos</p>
+        <a class="btn btn-dark" href="{% url 'polls:index' %}">Ver Quizzes disponíveis</a>
+    </div>
+<div class="card text-center">
+    <div class="card-body">
+        <p style="text-decoration:none" data-toggle="tooltip" title="Só administradores!" class="lead">Painel de administrador</p>
+	<a class="btn btn-dark" href="{% url 'admin:index' %}">Entrar</a>
+     </div>
+</div>
+<div class="card text-center">
+    <div class="card-body">
+        <p style="text-decoration:none" data-toggle="tooltip" title="Só administradores!" class="lead">Painel do usuário</p>
+	<a class="btn btn-dark" data-toggle="tooltip" title="Tem conta?" href="{% url 'signin' %}">Entre</a>
+	<p> ou </p>
+	<a class="btn btn-dark" data-toggle="tooltip" title="É novo?" href="{% url 'signup' %}">Cadastre-se</a>
+     </div>
+</div>
+
+</div>
+{% endblock %}
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

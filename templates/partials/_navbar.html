@@ -1,0 +1,9 @@
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/"> QuizRPG 
+	</a>
+	{% if user.is_authenticated %}
+	<a class="btn btn-dark" href="{% url 'logout' %}"> Sair</a>
+	{% endif %}
+    </div>
+</nav>
